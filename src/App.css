@@ -1,38 +1,46 @@
+body{
+  background: #303030;
+}
+
 .App {
   text-align: center;
+  background: #303030;
+  color:rgb(253, 169, 0);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.img {
+  box-shadow: 5px 10px 8px #000000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 500px) {
+  .img{
+    width: 30vw!important;;
+  }
+  .pergunta{
+    font-size: 10vw!important;
+  }
+  .animeInfo{
+    width: 50vw!important;
+    margin-right: 10vw;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a:link {
+  text-decoration: none;
+  color:#fff;
 }
 
-.App-link {
-  color: #61dafb;
+a:visited {
+  text-decoration: none;
+  color:#fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:hover {
+  text-decoration: underline;
+  color:#fff;
+}
+
+a:active {
+  text-decoration: underline;
+  color:#fff;
 }
