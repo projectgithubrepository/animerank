@@ -24,7 +24,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    setArraya(arraya)
+    getUserData()
   }, [])
 
   async function PostDataFirebase(selected, nVotos) {
