@@ -23,6 +23,10 @@ function App() {
     getUserData()
   }, [])
 
+  useEffect(() => {
+    setArraya(arraya)
+  }, [])
+
   async function PostDataFirebase(selected, nVotos) {
       app
         .firestore()
