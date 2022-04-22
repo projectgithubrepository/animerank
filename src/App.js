@@ -20,8 +20,7 @@ function App() {
   }
   useEffect(() => {
     getUserData()
-    console.log('teste')
-  }, [optionTitle, arraya])
+  }, [])
 
   async function PostDataFirebase(selected, nVotos) {
       app
