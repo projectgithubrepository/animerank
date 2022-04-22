@@ -9,19 +9,19 @@ function App() {
   const [arraya, setArraya] = useState([]);
   
   const getUserData= async() => {
-          try {
-          const res = await app.firestore().collection('votos').get()
-          // console.log(res.docs.map(doc => doc.data()), 'sera?');
-          setArraya(res.docs.map(doc => doc.data()))
-        } catch (err) {
-          // console.log(err);
-          // setError(true)
-        }
-        
-      }
+      try {
+      const res = await app.firestore().collection('votos').get()
+      // console.log(res.docs.map(doc => doc.data()), 'sera?');
+      setArraya(res.docs.map(doc => doc.data()))
+    } catch (err) {
+      // console.log(err);
+      // setError(true)
+    }
+  }
   useEffect(() => {
     getUserData()
-  }, [])
+    console.log('teste')
+  }, [optionTitle, arraya])
 
   async function PostDataFirebase(selected, nVotos) {
       app
@@ -74,7 +74,6 @@ function App() {
           <input style={{minHeight:'4vw', minWidth:'6vw', fontSize:'large', fontWeight:'bold', marginLeft:'5px'}} type="submit" value='votar' />
         </form>
         {arraya.map((item, index) => {
-          arraya.sort(function(a, b){return b.votos - a.votos})
           arraya.sort(function(a, b){return b.votos - a.votos})
           return (
               <>
