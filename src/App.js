@@ -11,10 +11,10 @@ function App() {
   const getUserData= async() => {
           try {
           const res = await app.firestore().collection('votos').get()
-          console.log(res.docs.map(doc => doc.data()), 'sera?');
+          // console.log(res.docs.map(doc => doc.data()), 'sera?');
           setArraya(res.docs.map(doc => doc.data()))
         } catch (err) {
-          console.log(err);
+          // console.log(err);
           // setError(true)
         }
         
@@ -85,7 +85,7 @@ function App() {
               <li style={{listStyle:'none', marginBottom:'2vw'}} key={index} >
                     <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
                       <div style={{fontSize:'20vw', width:'25vw'}}>{index+1}</div>
-                      <span><img className='img' style={{width:'20vw', borderRadius:'19px'}} src={`../../assets/${item.icon}.jpg`}/> {console.log(item.icon)}</span>
+                      <span><img className='img' style={{width:'20vw', borderRadius:'19px'}} src={`../../assets/${item.icon}.jpg`}/></span>
                       <div className='animeInfo' style={{width:'40vw', display:'flex', flexDirection:'column'}}>
                           <h1>{item.title}</h1>
                           <h1>VOTOS {item.votos}</h1>
