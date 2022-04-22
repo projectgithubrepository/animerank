@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     getUserData()
-  }, [])
+  }, [rank])
 
   async function PostDataFirebase(selected, nVotos) {
       app
