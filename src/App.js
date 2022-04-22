@@ -5,7 +5,7 @@ import app from './firebase.js'
 
 function App() {
   const [optionTitle, setOptionTitle] = useState(0);
-  const [rank, setRank] = useState();
+  // const [rank, setRank] = useState();
   const [arraya, setArraya] = useState([]);
   
   const getUserData= async() => {
@@ -22,10 +22,6 @@ function App() {
   useEffect(() => {
     getUserData()
   }, [])
-
-  useEffect(() => {
-    getUserData()
-  }, [rank])
 
   async function PostDataFirebase(selected, nVotos) {
       app
@@ -52,7 +48,7 @@ function App() {
     e.preventDefault();
     arraya.map((item, index) => {
     if(optionTitle === item.title){
-      setRank(item.votos + 1)
+      // setRank(item.votos + 1)
       PostDataFirebase(item, item.votos + 1)
     } else {
       return
@@ -78,6 +74,7 @@ function App() {
           <input style={{minHeight:'4vw', minWidth:'6vw', fontSize:'large', fontWeight:'bold', marginLeft:'5px'}} type="submit" value='votar' />
         </form>
         {arraya.map((item, index) => {
+          arraya.sort(function(a, b){return b.votos - a.votos})
           arraya.sort(function(a, b){return b.votos - a.votos})
           return (
               <>
